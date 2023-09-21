@@ -1,38 +1,71 @@
 import 'package:flutter/material.dart';
-import 'fooderlich_theme.dart';
-import 'home.dart';
+import 'package:provider/provider.dart';
+import 'Matkul_Eval_theme.dart';
+import 'models/models.dart';
+import 'navigation/app_router.dart';
 
-void main() {
-  runApp(const Fooderlich());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final appStateManager = AppStateManager();
+  await appStateManager.initializeApp();
+  runApp(Matkul_Eval(appStateManager: appStateManager));
 }
 
-class Fooderlich extends StatelessWidget {
-  const Fooderlich({Key? key}) : super(key: key);
+class Matkul_Eval extends StatefulWidget {
+  final AppStateManager appStateManager;
+
+  const Matkul_Eval({
+    super.key,
+    required this.appStateManager,
+  });
 
   @override
-//   Widget build(BuildContext context) {
-//     final theme = FooderlichTheme.light();
+  Matkul_EvalState createState() => Matkul_EvalState();
+}
 
-//     return MaterialApp(
-//       title: 'Fooderlich',
-//       theme: theme,
-//       home: Scaffold(
-//         appBar: AppBar(title: const Text('Fooderlich')),
-//         body: const Center(
-//           child: Text('Let\'s get cooking 🥘'),
-//         ),
-//       ),
-//     );
-//   }
-// }
+class Matkul_EvalState extends State<Matkul_Eval> {
+  late final _groceryManager = GroceryManager();
+  late final _profileManager = ProfileManager();
+  late final _appRouter = AppRouter(
+    widget.appStateManager,
+    _profileManager,
+    _groceryManager,
+  );
 
+  @override
   Widget build(BuildContext context) {
-    final theme = FooderlichTheme.dark();
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => _groceryManager,
+        ),
+        ChangeNotifierProvider(
+          create: (context) => _profileManager,
+        ),
+        ChangeNotifierProvider(
+          create: (context) => widget.appStateManager,
+        ),
+      ],
+      child: Consumer<ProfileManager>(
+        builder: (context, profileManager, child) {
+          ThemeData theme;
+          if (profileManager.darkMode) {
+            theme = Matkul_EvalTheme.dark();
+          } else {
+            theme = Matkul_EvalTheme.light();
+          }
 
-    return MaterialApp(
-      title: 'Fooderlich',
-      theme: theme,
-      home: Home(),
+          final router = _appRouter.router;
+
+          return MaterialApp.router(
+            theme: theme,
+            title: 'Mahasiswa Space',
+            routerDelegate: router.routerDelegate,
+            routeInformationParser: router.routeInformationParser,
+            routeInformationProvider: router.routeInformationProvider,
+          );
+        },
+      ),
     );
   }
 }

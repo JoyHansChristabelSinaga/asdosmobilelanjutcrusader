@@ -1,0 +1,74 @@
+{
+    "feed": [
+        {
+            "id": "1",
+            "profileImageUrl": "assets/profile_pics/person_cesare.jpeg",
+            "comment": "Libur oii.",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "5"
+        },
+        {
+            "id": "2",
+            "profileImageUrl": "assets/profile_pics/person_stef.jpeg",
+            "comment": "Ngapain rame rame?.",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "80"
+        },
+        {
+            "id": "3",
+            "profileImageUrl": "assets/profile_pics/person_crispy.png",
+            "comment": "bruh!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "20"
+        },
+        {
+            "id": "4",
+            "profileImageUrl": "assets/profile_pics/person_joe.jpeg",
+            "comment": "hmmmm.",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "30"
+        },
+        {
+            "id": "5",
+            "profileImageUrl": "assets/profile_pics/person_katz.jpeg",
+            "comment": "err 404!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "40"
+        },
+        {
+            "id": "6",
+            "profileImageUrl": "assets/profile_pics/person_kevin.jpeg",
+            "comment": "err 404!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "50"
+        },
+        {
+            "id": "7",
+            "profileImageUrl": "assets/profile_pics/person_sandra.jpeg",
+            "comment": "err 404!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "50"
+        },
+        {
+            "id": "8",
+            "profileImageUrl": "assets/profile_pics/person_manda.png",
+            "comment": "err 404!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "60"
+        },
+        {
+            "id": "9",
+            "profileImageUrl": "assets/profile_pics/person_ray.jpeg",
+            "comment": "err 404!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "70"
+        },
+        {
+            "id": "10",
+            "profileImageUrl": "assets/profile_pics/person_tiffani.jpeg",
+            "comment": "err 404!",
+            "foodPictureUrl": "card_carrot.png",
+            "timestamp": "90"
+        }
+    ]
+}

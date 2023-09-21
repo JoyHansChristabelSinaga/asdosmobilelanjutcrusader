@@ -1,0 +1,46 @@
+{
+    "recipes": [
+        {
+            "id": "1",
+            "cardType": "card1",
+            "title": "The Art of Dough",
+            "subtitle": "Trending Topic",
+            "backgroundImage": "assets/magazine_pics/card_bread.jpg",
+            "backgroundImageSource": "https://www.foodiesfeed.com/free-food-photo/baker-with-wheat-flour/",
+            "message": "Learn to make the perfect bread.",
+            "authorName": "Ray Wenderlich",
+            "role": "Founder of Raywenderlich",
+            "authorImage": "assets/profile_pics/person_ray.jpeg",
+            "durationInMinutes": 15,
+            "dietType": "🌯Standard",
+            "calories": 136,
+            "tags": ["Carbs", "Dough", "Crunchy", "Yummy"],
+            "description": "food made of flour, water, and yeast or another leavening agent, mixed together and baked: a loaf of bread",
+            "source": "Apple Dictionary",
+            "ingredients": [
+                {
+                    "imageUrl": "food_flour.jpg",
+                    "title": "Flour",
+                    "source": "https://pixabay.com/photos/bake-butter-flour-mountain-pile-599521/" 
+                },
+                {
+                    "imageUrl": "food_dozen_eggs.jpg",
+                    "title": "Dozen Eggs",
+                    "source": "https://pixabay.com/photos/egg-hen-s-egg-food-nutrition-1374141/"
+                }
+            ],
+            "instructions": [
+                {   
+                    "imageUrl": "food_flour.jpg",
+                    "description": "Pour the flour on the table.",
+                    "durationInMinutes": 5
+                },
+                {   
+                    "imageUrl": "food_dozen_eggs.jpg",
+                    "description": "Mix the eggs with the flour. ",
+                    "durationInMinutes": 5
+                }
+            ]
+        }
+    ]
+}
