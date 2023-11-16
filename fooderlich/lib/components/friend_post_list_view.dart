@@ -23,24 +23,23 @@ class FriendPostListView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Forum Mahasiswa',
+            'Social Chefs 👩‍🍳',
             style: Theme.of(context).textTheme.headline1,
           ),
           const SizedBox(height: 16),
           ListView.separated(
-            primary: false,
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            scrollDirection: Axis.vertical,
-            itemCount: friendPosts.length,
-            itemBuilder: (context, index) {
-              final post = friendPosts[index];
-              return FriendPostTile(post: post);
-            },
-            separatorBuilder: (context, index) {
-              return const SizedBox(height: 16);
-            },
-          ),
+              primary: false,
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              itemCount: friendPosts.length,
+              itemBuilder: (context, index) {
+                final post = friendPosts[index];
+                return FriendPostTile(post: post);
+              },
+              separatorBuilder: (context, index) {
+                return const SizedBox(height: 16);
+              }),
           const SizedBox(height: 16),
         ],
       ),

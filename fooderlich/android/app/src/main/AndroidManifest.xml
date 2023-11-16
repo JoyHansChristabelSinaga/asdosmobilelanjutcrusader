@@ -1,7 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fooderlich_reboot_reboot">
-   <application
-        android:label="fooderlich_reboot_reboot"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:label="fooderlich_2"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -8,9 +8,33 @@ import '../models/models.dart';
 class MockFooderlichService {
   // Batch request that gets both today recipes and friend's feed
   Future<ExploreData> getExploreData() async {
+    final todayRecipes = await _getTodayRecipes();
     final friendPosts = await _getFriendFeed();
 
-    return ExploreData(friendPosts);
+    return ExploreData(todayRecipes, friendPosts);
+  }
+
+  // Get sample explore recipes json to display in ui
+  Future<List<ExploreRecipe>> _getTodayRecipes() async {
+    // Simulate api request wait time
+    await Future.delayed(const Duration(milliseconds: 300));
+    // Load json from file system
+    final dataString = await _loadAsset(
+      'assets/sample_data/sample_explore_recipes.json',
+    );
+    // Decode to json
+    final Map<String, dynamic> json = jsonDecode(dataString);
+
+    // Go through each recipe and convert json to ExploreRecipe object.
+    if (json['recipes'] != null) {
+      final recipes = <ExploreRecipe>[];
+      json['recipes'].forEach((v) {
+        recipes.add(ExploreRecipe.fromJson(v));
+      });
+      return recipes;
+    } else {
+      return [];
+    }
   }
 
   // Get the sample friend json posts to display in ui
